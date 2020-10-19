@@ -1,0 +1,518 @@
+:root {
+  --bg-color:#202020;
+  --bg-alt-color: #2b2b2b;
+  --fg-color: #d4d4d4;
+  --highlight-color: #264f78;
+  --grey-color: #535353;
+  --green-color: #6a9955;
+  --blue-color: #76b9ed;
+  --orange-color: #ce9178;
+  --yellow-color: #d7ba7d;
+
+  --tab-color: var(--bg-color);
+
+  --context-menu-font-color: var(--fg-color);
+  --context-menu-bg-color: var(--bg-color);
+
+  --tab-bar-bg: var(--bg-alt-color);
+  --tab-active-line-color: var(--blue-color);
+  --tab-hover-color: var(--grey-color);
+  --tab-font-color: var(--fg-color);
+  --tab-selected-bg-color: var(--tab-color);
+  --tab-selected-font-color: var(--fg-color);
+
+  --search-with-text-color: var(--green-color);
+
+  --urlbar-unfocussed-border-color: var(--grey-color);
+  --urlbar-focus-border-color: var(--grey-color);
+  --urlbar-font-color: var(--fg-color);
+  --urlbar-dropmenu-bg-color: var(--tab-color);
+  --urlbar-dropmenu-selection-color: var(--highlight-color);
+  --urlbar-dropmenu-font-color: var(--fg-color);
+  --url-section-bg-color: var(--tab-color);
+  --url-section-font-color: var(--fg-color);
+
+  --nav-bar-bg-color: var(--tab-color);
+
+  --selected-text-color: var(--highlight-color);
+  --disabled-text-color: var(--black2-color);
+
+  --bookmark-font-color: var(--fg-color);
+
+  --status-panel-font-color: var(--blue-color);
+  --panel-separator-color: var(--fg-color);
+
+  --tab-corner-rounding: 0px;
+  --animation-speed: 0.25s;
+  --button-corner-rounding: 4px;
+
+}
+
+
+/******* Hiding unwanted stuff *******/
+
+#back-button, 
+#forward-button,
+#tracking-protection-icon-container,
+#identity-box,
+.tabbrowser-tab::before, 
+.tabbrowser-tab::after,
+.urlbar-page-action.urlbar-icon, 
+.urlbar-history-dropmarker,
+.tab-close-button,
+.panel-arrow,
+
+/* Context menu stuff */
+#context-navigation,
+#context-sep-navigation,
+#context-pocket,
+#context-sep-sendpagetodevice,
+#context-sendpagetodevice,
+#context-sendlinktodevice,
+#context-savelinktopocket,
+#context-openlinkprivate,
+#screenshots_mozilla_org_create-screenshot,
+
+/* Hamburger menu stuff */
+#appMenu-new-window-button,
+#appMenu-private-window-button,
+#appMenuRestoreLastSession,
+#appMenu-open-file-button,
+#appMenu-save-file-button,
+#appMenu-find-button,
+#appMenu-fxa-container,
+#appMenu-zoom-controls,
+#appMenu-fxa-label,
+#appMenu-edit-controls,
+#appMenu-print-button,
+#appMenu-more-button,
+#appMenu-help-button,
+#appMenu-quit-button,
+#appMenu-logins-button {
+  display: none !important;
+}
+
+.urlbar-page-action .urlbar-icon {
+  visibility: hidden !important;
+}
+
+/******* Hamburger- and arrowmenu *******/
+
+/* Hidden menu items */
+#widget-overflow-mainView > .panel-subview-body > toolbarseparator,
+.PanelUI-subView menuseparator, 
+.PanelUI-subView toolbarseparator,
+.cui-widget-panelview menuseparator, 
+.cui-widget-panel toolbarseparator {
+  -moz-appearance: none;
+  min-height: 0;
+  border-top: 0px solid var(--panel-separator-color) !important;
+  border-bottom: none;
+  margin: 0px 0!important;
+  padding: 0;
+}
+
+.panel-subview-body,
+#appMenu-zoomReset-button {
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  color: var(--context-menu-font-color) !important;
+  background: var(--context-menu-bg-color) !important;
+}
+
+.panel-header {
+  border-bottom: 1px solid var(--green-color) !important;
+  background: var(--context-menu-bg-color) !important; 
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+}
+
+/* "Customise Toolbar" and username */
+.panel-subview-footer,[class^="PanelUI-"] {
+color: var(--context-menu-font-color) !important;
+}
+
+.subviewbutton.panel-subview-footer {
+  background-color: var(--context-menu-bg-color) !important;
+  border-top: 1px var(--context-menu-font-color) !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+}
+
+tooltip {
+  -moz-appearance: none !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  color: var(--context-menu-font-color) !important;
+  background-color: var(--context-menu-bg-color) !important;
+  padding: 6.5px !important;
+}
+
+menupopup {
+	-moz-appearance: none !important;
+	padding: 8px 8px 8px 8px !important;
+	background-color: var(--context-menu-bg-color) !important;
+	min-width: 150px !important;
+}
+
+menuseparator {
+	-moz-appearance: none !important;
+	border: none !important;
+	padding: .5px 0px .5px 0px !important;
+	margin: 2px 2px 2px 8px !important;
+	background-color: var(--context-menu-font-color) !important;
+}
+
+menuitem, menu {
+  -moz-appearance: none !important;
+  padding: 2px 0px 2px 0px !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  color: var(--context-menu-font-color) !important;
+}
+
+menuitem[disabled="true"], menuitem[disabled="true"] > .menu-text {
+	color: var(--disabled-text-color) !important;
+}
+
+menuitem:hover, menu:hover, menu[open="true"], menuitem[_moz-menuactive="true"]	 {
+	-moz-appearance: none !important;
+	background-color: var(--selected-text-color) !important;
+}
+
+menugroup {
+	padding: 0px !important;
+	background-color: transparent !important;
+}
+
+menuitem > .menu-text, menuitem > .menu-iconic-text {
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  color: var(--context-menu-font-color) !important;
+}
+
+
+/******* Statuspanel  *******/
+
+#statuspanel #statuspanel-label {
+  -moz-appearance: none !important;
+  background-color: var(--context-menu-bg-color) !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 11px !important;
+  color: var(--status-panel-font-color) !important;
+  border: 0px solid !important;
+  border-radius: 1px !important;
+  padding: 5px 5px 5px 5px !important;
+}
+
+#statuspanel {
+	border: none !important;
+	bottom: 16px !important;
+	height: 20px !important;
+	max-width: 45% !important;
+	transition: none !important;
+}
+
+
+/******* COLORING STUFF *******/
+
+/* Tabline color */
+.tab-line[selected="true"] {
+  background-color: var(--tab-active-line-color) !important;
+}
+
+/* The text that says 'Search with ...' */
+.urlbarView-action {
+  color: var(--search-with-text-color) !important;
+}
+
+/* Selected text */
+::selection {
+  background: var(--selected-text-color) !important;
+}
+
+/* Tabs and bookmarkstoolbar background */
+#navigator-toolbox {
+  background-color: var(--tab-bar-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Change tab font */
+.tab-content {
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  color: var(--tab-font-color) !important;
+}
+
+/* Bookmarktoolbar font */
+#PlacesToolbar {
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+}
+
+
+/******* TABBAR *******/
+
+tab[visuallyselected] .tab-background::before,
+tab[visuallyselected] .tab-background::after {
+  content: "" !important;
+  display: inline !important;
+  position: absolute !important;
+  bottom: 0px !important;
+  pointer-events: none !important;
+  background-color: transparent !important;
+  transition: var(--animation-speed) !important;
+}
+
+tab[visuallyselected] .tab-background::before {
+  border-bottom-right-radius: var(--tab-corner-rounding) !important;
+  transform: translateX(calc(-1 * var(--tab-corner-rounding))) !important;
+  box-shadow: 4px 4px 0px 4px val(--tab-selected-bg-color) !important;
+  transition: var(--animation-speed) !important;
+}
+
+tab[visuallyselected] .tab-background::after {
+  border-bottom-left-radius: var(--tab-corner-rounding) !important;
+  right: 0px !important;
+  transform: translateX(var(--tab-corner-rounding)) !important;
+  box-shadow: -4px 4px 0px 4px val(--tab-selected-bg-color) !important;
+  transition: var(--animation-speed) !important;
+}
+
+
+/******* URLBAR *******/
+
+#urlbar-background {
+  display: none !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  top: 0px !important;
+  left: 0px !important;
+  width: 100% !important;
+}
+
+#urlbar {
+  border: 1px solid !important;
+  border-color: var(--urlbar-unfocussed-border-color) !important;
+}
+
+input#urlbar-input {
+  caret-color: var !important;
+  text-align: left !important;
+  margin-left: 3px !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+  margin-right: 3px !important;
+}
+
+
+/******* URLBAR DROPDOWN MENU *******/
+
+.urlbarView {
+  margin-inline: 0px !important;
+  border: none !important;
+  width: 100% !important;
+  box-shadow: none !important;
+  clip-path: inset(0px -20px -30px -20px) !important;
+  animation: none !important;
+  margin-block-start: 0px !important;
+  outline: none;
+  background-color: var(--urlbar-dropmenu-bg-color) !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  
+}
+
+.urlbarView-results {
+  padding-block: 0px !important;
+}
+
+.urlbarView .urlbarView-row {
+  border-radius: 0px !important;
+  padding-block: 0px !important;
+}
+
+.urlbarView-row-inner {
+  border-radius: 0px !important;
+}
+
+.urlbarView-body-inner {
+  border: none !important;
+}
+
+.urlbarView-title {
+  height: 18px !important;
+}
+
+/* Enables transparency/blur on the search box too */
+.search-one-offs, .search-panel-header, .search-panel-one-offs {
+  background: none !important;
+}
+
+/* DISABLE EXPANDING START */
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 3) !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+}
+
+/* DISABLE EXPANDING END */
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  animation-name: none !important;
+  box-shadow: 0 1px 4px !important;
+}
+
+/* REMOVE URL RESULT PADDING */
+.urlbarView-row {
+  padding-block: 0 !important;
+}
+
+/* MOVE URL RESULT TYPE ICON TO LEFT START */
+.urlbarView-type-icon {
+  min-width: 16px !important;
+  height: 16px !important;
+  margin-bottom: 0 !important;
+  margin-inline-start: 0 !important;
+}
+
+/* MOVE URL RESULT TYPE ICON TO LEFT END */
+.urlbarView-favicon {
+  margin-inline-start: 20px !important;
+}
+
+/* REMOVES BLUE GLOW FROM SHADOWFOX START */
+#urlbar[focused=true],
+.searchbar-textbox[focused=true] {
+  border: 0px solid !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* CHANGES HOVER COLOR ON URL RESULT START */
+#urlbar-results.urlbarView-results div.urlbarView-row:hover {
+  background-color: var(--tab-hover-color) !important;
+}
+
+/* Narrow the spacing between toolbar buttons */
+#nav-bar .toolbarbutton-icon {
+  width: 20px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+#PanelUI-button {
+  margin-left: 0 !important;
+  border-left: none !important;
+}
+
+#PanelUI-menu-button, .toolbarbutton-badge-stack {
+  padding-left: 0 !important;
+  padding-right: 1px !important;
+}
+
+#nav-bar {
+  background: var(--nav-bar-bg-color) !important;
+}
+
+.tab-background[selected="true"] {
+  background: var(--tab-selected-bg-color) !important;
+}
+
+#main-window #urlbar {
+  background: var(--url-section-bg-color) !important;
+  color: var(--url-section-font-color) !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  padding-left: 50 !important;
+}
+
+
+/******* Bookmark settings *******/
+
+#PlacesToolbarItems .bookmark-item {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  color: var(--bookmark-font-color) !important;
+}
+
+#PlacesToolbarItems bookmark-item:hover {
+  background-color: var(--selected-text-color);
+
+}
+
+
+/******* Left-side menus *******/
+
+#bookmarks-view,
+#historyTree,
+#history-panel,
+#sidebar-header,
+#search-box {
+  -moz-appearance: none !important;
+  font-family: "Open Sans Semibold" !important;
+  font-size: 9pt !important;
+  background-color: var(--context-menu-bg-color) !important;
+  color: var(--context-menu-font-color) !important;
+  border: 0px !important;
+  border-right: 0px !important;
+}
+
+#history-panel search-textbox {
+  -moz-appearance: none !important;
+  background-color: var(--context-menu-bg-color) !important;
+  color: var(--context-menu-font-color) !important;
+}
+
+/* Bookmarks sidebar hover row color */
+treechildren::-moz-tree-row(hover){
+  background-color: var(--selected-text-color) !important;
+}
+
+treechildren::-moz-tree-row(selected){
+  background-color: var(--selected-text-color) !important;
+  border: none !important;
+}
+
+menuitem[checked="true"][type="radio"] > .menu-iconic-left {
+	padding: 1px !important;
+	border: var(--green-color) !important;
+	height: 17px !important;
+	border-radius: 100%;
+	background: var(--green-color) !important;
+	transform: scale(.5); 
+}
+
+#sidebar-box {
+  overflow: hidden;
+  min-width: 300px;
+  max-width: 400px;
+  position: fixed;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+#sidebar-search-container {
+  background-color: var(--context-menu-bg-color) !important;
+  padding: 20 !important;
+}
+
+#sidebar-box #sidebar-header {
+  display: none;
+}
+
+#sidebar-box ~ #sidebar-splitter {
+  border-color: var(--context-menu-bg-color) !important;
+  background-color: var(--context-menu-bg-color) !important;
+}
+
+#sidebar-box #sidebar {
+  height: 100vh;
+}

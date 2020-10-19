@@ -1,0 +1,21 @@
+:root{
+  --bg-color:#202020;
+  --bg-alt-color: #2b2b2b;
+  --fg-color: #d4d4d4;
+  --highlight-color: #264f78;
+  --grey-color: #535353;
+  --green-color: #6a9955;
+  --blue-color: #76b9ed;
+  --orange-color: #ce9178;
+  --yellow-color: #d7ba7d;
+  --purple-color: #C586C0;
+  --darkblue-color: #569CD6;
+}
+
+@-moz-document url("about:home"),url("about:blank"),url("about:newtab"),url("about:privatebrowsing"){
+  body{ background: var(--bg-color) !important }
+}
+
+*{
+  scrollbar-color: var(--grey-color) var(--bg-color) !important;
+}
