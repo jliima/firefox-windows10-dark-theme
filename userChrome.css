@@ -42,9 +42,10 @@
   --status-panel-font-color: var(--blue-color);
   --panel-separator-color: var(--fg-color);
 
+  --text-hover-color: var(--bg-alt-color);
+
   --tab-corner-rounding: 0px;
   --animation-speed: 0.25s;
-  --button-corner-rounding: 4px;
 
 }
 
@@ -55,6 +56,7 @@
 #forward-button,
 #tracking-protection-icon-container,
 #identity-box,
+#TabsToolbar.titlebar-spacer[type="post-tabs"],
 .tabbrowser-tab::before, 
 .tabbrowser-tab::after,
 .urlbar-page-action.urlbar-icon, 
@@ -92,9 +94,23 @@
   display: none !important;
 }
 
-.urlbar-page-action .urlbar-icon {
+.urlbar-page-action,
+.urlbar-icon,
+.titlebar-spacer[type="pre-tabs"] {
   visibility: hidden !important;
 }
+
+
+/******* MAIN WINDOW BORDERS *******/
+
+#main-window{
+  border-top-color: var(--grey-color) !important;
+}
+
+#main-window:-moz-window-inactive {
+  border-top-color: #3b3b3b !important; /* from windows inactive color */
+}
+
 
 /******* Hamburger- and arrowmenu *******/
 
@@ -177,7 +193,7 @@ menuitem[disabled="true"], menuitem[disabled="true"] > .menu-text {
 
 menuitem:hover, menu:hover, menu[open="true"], menuitem[_moz-menuactive="true"]	 {
 	-moz-appearance: none !important;
-	background-color: var(--selected-text-color) !important;
+	background-color: var(--text-hover-color) !important;
 }
 
 menugroup {
@@ -398,7 +414,7 @@ input#urlbar-input {
 
 /* CHANGES HOVER COLOR ON URL RESULT START */
 #urlbar-results.urlbarView-results div.urlbarView-row:hover {
-  background-color: var(--tab-hover-color) !important;
+  background-color: var(--text-hover-color) !important;
 }
 
 /* Narrow the spacing between toolbar buttons */
@@ -444,7 +460,7 @@ input#urlbar-input {
 }
 
 #PlacesToolbarItems bookmark-item:hover {
-  background-color: var(--selected-text-color);
+  background-color: var(--text-hover-color) !important;
 
 }
 
@@ -473,7 +489,7 @@ input#urlbar-input {
 
 /* Bookmarks sidebar hover row color */
 treechildren::-moz-tree-row(hover){
-  background-color: var(--selected-text-color) !important;
+  background-color: var(--text-hover-color) !important;
 }
 
 treechildren::-moz-tree-row(selected){
