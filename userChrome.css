@@ -49,11 +49,8 @@
 
 }
 
-
 /******* Hiding unwanted stuff *******/
 
-#back-button, 
-#forward-button,
 #tracking-protection-icon-container,
 #identity-box,
 #TabsToolbar.titlebar-spacer[type="post-tabs"],
@@ -94,7 +91,7 @@
   display: none !important;
 }
 
-.urlbar-page-action,
+
 .urlbar-icon,
 .titlebar-spacer[type="pre-tabs"] {
   visibility: hidden !important;
